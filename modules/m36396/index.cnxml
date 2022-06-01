@@ -1,0 +1,197 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>Test Sampling and Channel Characterization</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m36396</md:content-id>
+  <md:title>Test Sampling and Channel Characterization</md:title>
+  <md:abstract>The means by which we characterized our speaker to mic channel using a test signal.</md:abstract>
+  <md:uuid>0f38a45c-1e7d-49d6-8b21-af814d633923</md:uuid>
+</metadata>
+
+<content>
+    <section id="id1165273219495">
+      <title>Sample Signal Generation</title>
+      <para id="id2697891">For our sample signal we decided on a chirp covering the range of human hearing, 15 Hz to 20000 Hz. This signal was created using the Matlab chirp command as follows:</para>
+      <code id="id3104395" display="block">%% Chirp Function
+    
+    Fs = 44100;
+    
+    f0 = 15;
+    f1 = 20000;
+    t = 0:1/Fs:1-1/Fs;
+    y = chirp(t,f0,1,f1);
+    </code>
+      <para id="id1165285790427">where f0 and f1 are the edges of the spectrum of human hearing. The vector t has 44100 entries, each separated by 1/44100. Taken as a time vector and with the end time of the chirp set as 1 second, this creates a chirp which goes from 15 Hz to 20000 Hz in 1 second at intervals of 1/44100 seconds, which allows for a clean transition from 15 Hz to 20000 Hz at the standard sampling rate of 44100 Hz.</para>
+    </section>
+    <section id="id1165267340030">
+      <title>Finding the Transfer Function of the Speaker to Mic Channel</title>
+      <para id="id1165284177846">
+        <figure id="id1165263292396">
+          <media id="id1165263292396_media" alt="">
+            <image mime-type="image/jpg" src="../../media/graphics1-d812.jpg" id="id1165263292396__onlineimage" height="406" width="599"/>
+          </media>
+          <caption>Microphone and Speaker Equipment used for signal sampling</caption>
+        </figure>
+      </para>
+      <para id="id1165261472258">In order to find HRTFs we first had to know the transfer function of the speaker to mic channel through air. We did this by first playing our chirp signal at a mic held approximately 3 feet away and recording the mic output. We did this twice and averaged the two outputs to remove any anomalies. Then using the property that for an LTI filter:</para>
+      <equation id="id1165261413798">
+        <m:math>
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>h</m:mi>
+                      <m:mstyle fontstyle="italic">
+                        <m:mrow>
+                          <m:mtext>channel</m:mtext>
+                        </m:mrow>
+                      </m:mstyle>
+                    </m:msub>
+                    <m:mo stretchy="false">(</m:mo>
+                    <m:mi>t</m:mi>
+                    <m:mrow>
+                      <m:mo stretchy="false">)</m:mo>
+                      <m:mo stretchy="false">∗</m:mo>
+                      <m:mstyle fontstyle="italic">
+                        <m:mrow>
+                          <m:mtext>in</m:mtext>
+                        </m:mrow>
+                      </m:mstyle>
+                    </m:mrow>
+                    <m:mo stretchy="false">(</m:mo>
+                    <m:mi>t</m:mi>
+                    <m:mrow>
+                      <m:mo stretchy="false">)</m:mo>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:mstyle fontstyle="italic">
+                        <m:mrow>
+                          <m:mtext>out</m:mtext>
+                        </m:mrow>
+                      </m:mstyle>
+                    </m:mrow>
+                    <m:mo stretchy="false">(</m:mo>
+                    <m:mi>t</m:mi>
+                    <m:mo stretchy="false">)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{h_ ital "channel" \( t \)  *  ital "in" \( t \) = ital "out" \( t \) } {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </equation>
+      <para id="id1165267362458">or in terms of frequency domain: </para>
+      <equation id="id1165260637727">
+        <m:math>
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>H</m:mi>
+                      <m:mstyle fontstyle="italic">
+                        <m:mrow>
+                          <m:mtext>Channel</m:mtext>
+                        </m:mrow>
+                      </m:mstyle>
+                    </m:msub>
+                    <m:mo stretchy="false">(</m:mo>
+                    <m:mi>ω</m:mi>
+                    <m:mrow>
+                      <m:mo stretchy="false">)</m:mo>
+                      <m:mo stretchy="false">⋅</m:mo>
+                      <m:mstyle fontstyle="italic">
+                        <m:mrow>
+                          <m:mtext>IN</m:mtext>
+                        </m:mrow>
+                      </m:mstyle>
+                    </m:mrow>
+                    <m:mo stretchy="false">(</m:mo>
+                    <m:mi>ω</m:mi>
+                    <m:mrow>
+                      <m:mo stretchy="false">)</m:mo>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:mstyle fontstyle="italic">
+                        <m:mrow>
+                          <m:mtext>OUT</m:mtext>
+                        </m:mrow>
+                      </m:mstyle>
+                    </m:mrow>
+                    <m:mo stretchy="false">(</m:mo>
+                    <m:mi>ω</m:mi>
+                    <m:mo stretchy="false">)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{H_ ital "Channel" \( ω \)  cdot  ital "IN" \( ω \) = ital "OUT" \( ω \) } {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </equation>
+      <equation id="id1165289186012">
+        <m:math>
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>H</m:mi>
+                      <m:mstyle fontstyle="italic">
+                        <m:mrow>
+                          <m:mtext>Channel</m:mtext>
+                        </m:mrow>
+                      </m:mstyle>
+                    </m:msub>
+                    <m:mo stretchy="false">(</m:mo>
+                    <m:mi>ω</m:mi>
+                    <m:mrow>
+                      <m:mo stretchy="false">)</m:mo>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:mstyle fontstyle="italic">
+                        <m:mrow>
+                          <m:mtext>OUT</m:mtext>
+                        </m:mrow>
+                      </m:mstyle>
+                    </m:mrow>
+                    <m:mo stretchy="false">(</m:mo>
+                    <m:mi>ω</m:mi>
+                    <m:mrow>
+                      <m:mo stretchy="false">)</m:mo>
+                      <m:mo stretchy="false">/</m:mo>
+                      <m:mstyle fontstyle="italic">
+                        <m:mrow>
+                          <m:mtext>IN</m:mtext>
+                        </m:mrow>
+                      </m:mstyle>
+                    </m:mrow>
+                    <m:mo stretchy="false">(</m:mo>
+                    <m:mi>ω</m:mi>
+                    <m:mo stretchy="false">)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{H_ ital "Channel" \( ω \) = ital "OUT" \( ω \) / ital "IN" \( ω \) } {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </equation>
+      <para id="id1165269968744">where 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msub><m:mi>H</m:mi><m:mstyle fontstyle="italic"><m:mrow><m:mtext>Channel</m:mtext></m:mrow></m:mstyle></m:msub><m:mo stretchy="false">(</m:mo><m:mi>ω</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{H_ ital "Channel" \( ω \) } {}</m:annotation></m:semantics></m:math>is the transfer function of the system and 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mstyle fontstyle="italic"><m:mrow><m:mtext>IN</m:mtext></m:mrow></m:mstyle><m:mo stretchy="false">(</m:mo><m:mi>ω</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ ital "IN" \( ω \) } {}</m:annotation></m:semantics></m:math> and 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mstyle fontstyle="italic"><m:mrow><m:mtext>OUT</m:mtext></m:mrow></m:mstyle><m:mo stretchy="false">(</m:mo><m:mi>ω</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ ital "OUT" \( ω \) } {}</m:annotation></m:semantics></m:math> are the fourier transforms of the input and output signals respectively. Thus, by taking the fft of the mic output and pointwise dividing by the fft of the chirp signal <link target-id="id1165261472258">(3)</link>, we found the transfer function of the speaker to mic channel.</para>
+      <para id="id1165270471668">
+        <figure id="id1165261474617"><media id="id1165261474617_media" alt="">
+            <image mime-type="image/jpg" src="../../media/graphics2-1f43.jpg" id="id1165261474617__onlineimage" height="647" width="1200"/>
+          </media>
+          
+        <caption>Amplitude Spectrum of Mic to Speaker Transfer Function</caption></figure>
+      </para>
+    </section>
+  </content>
+</document>

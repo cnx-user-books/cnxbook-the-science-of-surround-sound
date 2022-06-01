@@ -1,0 +1,36 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+  <title>Results, Conclusions, and Future Applications</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m36401</md:content-id>
+  <md:title>Results, Conclusions, and Future Applications</md:title>
+  <md:abstract>The results, conclusions, and future applications of this surround sound simulation project.</md:abstract>
+  <md:uuid>e098dd5e-fa46-4ef3-8d42-7568faf51772</md:uuid>
+</metadata>
+
+<content>
+    <section id="id1168131882700">
+      <title>Project Wrap-up</title>
+      <section id="id1168137793527">
+        <title>Results</title>
+        <para id="id1168135416970">When the synthesized sound playing command is executed, the results are encouraging. Obviously, the surround sound simulation works best for the person who was used in the HRTF calculation step as each person will have different HRTFs. The illusion of sounds coming from different directions is clearly discernible to other listeners, but generally the directions are neither as distinct nor as accurate. The resulting sound is also somewhat noisy, due to the testing environment and the quality of the equipment used.</para>
+      </section>
+      <section id="id1168134214312">
+        <title>Conclusion</title>
+        <para id="id1168132739333">While this method of surround sound simulation wasn’t quite as convincing as a home theater setup might have been, it was quite accurate considering the number of HRTFs used, the testing environment, and its’ ability to work in part for more people than simply the HRTF test subject.</para>
+      </section>
+      <section id="id1168131393840">
+        <title>Future Directions/Applications</title>
+        <para id="id1168133934683">This simulation method, if perfected, could be readily scaled to calculate more directional transfer functions. This would allow the simulation of sound with greater directional fidelity. Possible means of improving this method include:</para>
+        <list id="id1168144140041" list-type="bulleted">
+          <item>Recording in a less noisy, anechoic chamber</item>
+          <item>Using higher quality sound production and recording devices with more linear transfer functions</item>
+          <item>Recording at higher sampling rates</item>
+          <item>Measuring the transfer function between each headphone ear bud and the user’s inner ear, and incorporating this into the directional transfer function</item>
+          <item>More accurately measuring speaker location/angle to better simulate a home theatre environment</item>
+          <item>Use of a nonlinear chirp signal to account for the nonlinearity of human hearing</item>
+        </list>
+        <para id="id1168134277242">An interesting hypothetical application of this technology involves noise-cancelling headphones. Such headphones have a small microphone embedded in them for the purpose of sampling environmental noise. These microphones could conceivably be used to sample a particular user’s HRTFs if an external speaker was available. These, along with software, could then be used to simulate a multi-directional speaker configuration.</para>
+      </section>
+    </section>
+  </content>
+</document>

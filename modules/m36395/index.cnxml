@@ -1,0 +1,23 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+  <title>Introduction</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m36395</md:content-id>
+  <md:title>Introduction</md:title>
+  <md:abstract>The introduction to our Fall 2010 ELEC 301 project on surround sound simulation.</md:abstract>
+  <md:uuid>117ea9ec-c02c-4ee9-bd92-8c46d0a38933</md:uuid>
+</metadata>
+
+<content>
+    <section id="id1166128003891">
+      <title>Introduction</title>
+      <section id="id1166117449861">
+        <title>Background</title>
+        <para id="id1166115417711">In today’s rapidly growing entertainment industry, many people desire a greater degree of emersion whether it be through 3-D visuals popping out of the screen or surround sound audio making them feel as though they are at the heart of the excitement. Unfortunately, the means to implement these systems can often be out of reach for individuals due to the cost of such systems or their size. Surround sound systems, while not as expensive as one of the new 3-D TVs, are still a significant investment both in money and the time needed to correctly set up the system. Additionally, these systems are by no means portable.</para>
+      </section>
+      <section id="id1166117890790">
+        <title>Project Description</title>
+        <para id="id1166113810963">Through our project we sought to address both the cost and size issue of surround sound systems by using in-ear microphones to sample a test signal from which a person’s particular <term>head-related transfer functions</term> (HRTFs) could be calculated. These transfer fnctions could then be applied to input signals and the resulting output signals, when played through stereo headphones, would give the appearance of sounds coming from various directions in a circle around the person’s head.</para>
+      </section>
+    </section>
+  </content>
+</document>

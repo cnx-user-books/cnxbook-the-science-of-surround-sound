@@ -1,0 +1,23 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+  <title>Acknowledgements/References</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m36403</md:content-id>
+  <md:title>Acknowledgements/References</md:title>
+  <md:abstract>People we would like to thank and places we got important information from.</md:abstract>
+  <md:uuid>7e58eba2-ae87-43d3-85b8-c327c8ef7b2e</md:uuid>
+</metadata>
+
+<content>
+    <section id="id2305792">
+      <title>Acknowledgements</title>
+      <para id="id1730351">Dr. Don Johnson for his assistance in establishing a testing methodology, identifying potential problems, and imparting to us his knowledge regarding HRTFs and sound sampling.</para>
+      <para id="id1743846">Dr. Richard Baraniuk for ensuring that we were dealing with a feasible project and for his instruction in the classroom which gave us the knowledge necessary to undertake this project.</para>
+      <para id="id1993049">Eva Dyer for pointing us in the direction of several HRTF-related resources as well as suggestions regarding possible future improvements.</para>
+    </section>
+    <section id="id1807484">
+      <title>References</title>
+      <para id="id3454508"><emphasis effect="italics">The Music of Bjorn Lynne.</emphasis> LynneMusic. Web. 14 Dec. 2010. &lt;<link url="http://www.lynnemusic.com/surround.html">http://www.lynnemusic.com/surround.html</link>&gt;.</para>
+      <para id="id1812379">This is where we found our 5.1 surround sound test files which we used to test the accuracy of our calculated directional transfer functions.</para>
+    </section>
+  </content>
+</document>

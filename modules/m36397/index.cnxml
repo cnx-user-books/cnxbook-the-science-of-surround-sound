@@ -1,0 +1,174 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+  <title>Finding Directional HRTFs</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m36397</md:content-id>
+  <md:title>Finding Directional HRTFs</md:title>
+  <md:abstract>Finding directional transfer functions by means of in-ear signal sampling.</md:abstract>
+  <md:uuid>8d71df67-1db0-4eb9-ae7f-8ab3a361b14a</md:uuid>
+</metadata>
+
+<content>
+    <section id="id1171200278203">
+      <title>Calculating HRTFs for Signals from Various Directions</title>
+      <section id="id2260599">
+        <title>Directional Signal Sampling</title>
+        <para id="id3816118">In order to find directional HRTFs for our test subject, we first had to make recordings of the signals as heard by the test subject coming from different directions. In order to do this, we placed our microphone in the ear to be tested, as shown below.</para>
+        <figure id="id3199406">
+          <media id="id3199406_media" alt="">
+            <image mime-type="image/jpg" src="../../media/graphics1-fb2b.jpg" id="id3199406__onlineimage" height="353" width="600"/>
+          </media>
+          <caption>In-ear microphone setup for the left ear</caption>
+        </figure>
+        <para id="id1171187808559">We then played our chirp signal at the test subject from various directions with the speaker at the same distance as in the initial channel characterization. As in the initial channel characterization, we sampled twice for each direction and averaged the two results. After sampling for that particular ear, we then switched the microphone to the other ear and sampled the same directions for the other ear.</para>
+        <para id="id1171187681795">
+          <figure id="id1171181629972">
+            <media id="id1171181629972_media" alt="">
+              <image mime-type="image/jpg" src="../../media/graphics2-805b.jpg" id="id1171181629972__onlineimage" height="406" width="600"/>
+            </media>
+            <caption>The five sampling directions used to find HRTFs</caption>
+          </figure>
+        </para>
+      </section>
+      <section id="id1171191662535">
+        <title>HRTF Calculation</title>
+        <para id="id1171197073446">In the initial channel characterization, the transfer function 
+<m:math xmlns:m="http://www.w3.org/1998/Math/MathML"><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msub><m:mi>H</m:mi><m:mstyle fontstyle="italic"><m:mrow><m:mtext>Channel</m:mtext></m:mrow></m:mstyle></m:msub><m:mo stretchy="false">(</m:mo><m:mi>ω</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{H_ ital "Channel" \( ω \) } {}</m:annotation></m:semantics></m:math>was the only thing acting on the chirp signal. Now, with the microphone situated in the test subject’s ear, both 
+<m:math xmlns:m="http://www.w3.org/1998/Math/MathML"><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msub><m:mi>H</m:mi><m:mstyle fontstyle="italic"><m:mrow><m:mtext>Channel</m:mtext></m:mrow></m:mstyle></m:msub><m:mo stretchy="false">(</m:mo><m:mi>ω</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{H_ ital "Channel" \( ω \) } {}</m:annotation></m:semantics></m:math> and the directional HRTF for that particular ear 
+<m:math xmlns:m="http://www.w3.org/1998/Math/MathML"><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msub><m:mi>H</m:mi><m:mstyle fontstyle="italic"><m:mrow><m:mtext>Directional</m:mtext></m:mrow></m:mstyle></m:msub><m:mo stretchy="false">(</m:mo><m:mi>ω</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{H_ ital "Directional" \( ω \) } {}</m:annotation></m:semantics></m:math>act on the chirp signal. In other words:</para>
+        <equation id="id1171211119290">
+          <m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+            <m:semantics>
+              <m:mrow>
+                <m:mstyle fontsize="12pt">
+                  <m:mrow>
+                    <m:mrow>
+                      <m:msub>
+                        <m:mi>H</m:mi>
+                        <m:mstyle fontstyle="italic">
+                          <m:mrow>
+                            <m:mtext>Channel</m:mtext>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:msub>
+                      <m:mo stretchy="false">(</m:mo>
+                      <m:mi>ω</m:mi>
+                      <m:mrow>
+                        <m:mo stretchy="false">)</m:mo>
+                        <m:mo stretchy="false">⋅</m:mo>
+                        <m:mstyle fontstyle="italic">
+                          <m:mrow>
+                            <m:mtext>IN</m:mtext>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:mrow>
+                      <m:mo stretchy="false">(</m:mo>
+                      <m:mi>ω</m:mi>
+                      <m:mrow>
+                        <m:mo stretchy="false">)</m:mo>
+                        <m:mo stretchy="false">⋅</m:mo>
+                        <m:msub>
+                          <m:mi>H</m:mi>
+                          <m:mstyle fontstyle="italic">
+                            <m:mrow>
+                              <m:mtext>Directional</m:mtext>
+                            </m:mrow>
+                          </m:mstyle>
+                        </m:msub>
+                      </m:mrow>
+                      <m:mo stretchy="false">(</m:mo>
+                      <m:mi>ω</m:mi>
+                      <m:mrow>
+                        <m:mo stretchy="false">)</m:mo>
+                        <m:mo stretchy="false">=</m:mo>
+                        <m:mstyle fontstyle="italic">
+                          <m:mrow>
+                            <m:mtext>OUT</m:mtext>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:mrow>
+                      <m:mo stretchy="false">(</m:mo>
+                      <m:mi>ω</m:mi>
+                      <m:mo stretchy="false">)</m:mo>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mstyle>
+                <m:mrow/>
+              </m:mrow>
+              <m:annotation encoding="StarMath 5.0"> size 12{H_ ital "Channel" \( ω \)  cdot  ital "IN" \( ω \)  cdot H_ ital "Directional" \( ω \) = ital "OUT" \( ω \) } {}</m:annotation>
+            </m:semantics>
+          </m:math>
+        </equation>
+        <para id="id1171184726890">Since we already calculated 
+<m:math xmlns:m="http://www.w3.org/1998/Math/MathML"><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msub><m:mi>H</m:mi><m:mstyle fontstyle="italic"><m:mrow><m:mtext>Channel</m:mtext></m:mrow></m:mstyle></m:msub><m:mo stretchy="false">(</m:mo><m:mi>ω</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{H_ ital "Channel" \( ω \) } {}</m:annotation></m:semantics></m:math> and 
+<m:math xmlns:m="http://www.w3.org/1998/Math/MathML"><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mstyle fontstyle="italic"><m:mrow><m:mtext>IN</m:mtext></m:mrow></m:mstyle><m:mo stretchy="false">(</m:mo><m:mi>ω</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ ital "IN" \( ω \) } {}</m:annotation></m:semantics></m:math> during the initial channel characterization, and we can find
+<m:math xmlns:m="http://www.w3.org/1998/Math/MathML"><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mstyle fontstyle="italic"><m:mrow><m:mtext>OUT</m:mtext></m:mrow></m:mstyle><m:mo stretchy="false">(</m:mo><m:mi>ω</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ ital "OUT" \( ω \) } {}</m:annotation></m:semantics></m:math> for each particular ear/direction combination by taking the fft of our recorded outputs, we can therefore calculate 
+<m:math xmlns:m="http://www.w3.org/1998/Math/MathML"><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msub><m:mi>H</m:mi><m:mstyle fontstyle="italic"><m:mrow><m:mtext>Directional</m:mtext></m:mrow></m:mstyle></m:msub><m:mo stretchy="false">(</m:mo><m:mi>ω</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{H_ ital "Directional" \( ω \) } {}</m:annotation></m:semantics></m:math>using the equation:</para>
+        <equation id="id1171206256283">
+          <m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+            <m:semantics>
+              <m:mrow>
+                <m:mstyle fontsize="12pt">
+                  <m:mrow>
+                    <m:mrow>
+                      <m:msub>
+                        <m:mi>H</m:mi>
+                        <m:mstyle fontstyle="italic">
+                          <m:mrow>
+                            <m:mtext>Directional</m:mtext>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:msub>
+                      <m:mo stretchy="false">(</m:mo>
+                      <m:mi>ω</m:mi>
+                      <m:mrow>
+                        <m:mo stretchy="false">)</m:mo>
+                        <m:mo stretchy="false">=</m:mo>
+                        <m:mstyle fontstyle="italic">
+                          <m:mrow>
+                            <m:mtext>OUT</m:mtext>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:mrow>
+                      <m:mo stretchy="false">(</m:mo>
+                      <m:mi>ω</m:mi>
+                      <m:mrow>
+                        <m:mo stretchy="false">)</m:mo>
+                        <m:mo stretchy="false">/</m:mo>
+                        <m:mo stretchy="false">[</m:mo>
+                      </m:mrow>
+                      <m:msub>
+                        <m:mi>H</m:mi>
+                        <m:mstyle fontstyle="italic">
+                          <m:mrow>
+                            <m:mtext>Channel</m:mtext>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:msub>
+                      <m:mo stretchy="false">(</m:mo>
+                      <m:mi>ω</m:mi>
+                      <m:mrow>
+                        <m:mo stretchy="false">)</m:mo>
+                        <m:mo stretchy="false">⋅</m:mo>
+                        <m:mstyle fontstyle="italic">
+                          <m:mrow>
+                            <m:mtext>IN</m:mtext>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:mrow>
+                      <m:mo stretchy="false">(</m:mo>
+                      <m:mi>ω</m:mi>
+                      <m:mo stretchy="false">)</m:mo>
+                      <m:mo stretchy="false">]</m:mo>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mstyle>
+                <m:mrow/>
+              </m:mrow>
+              <m:annotation encoding="StarMath 5.0"> size 12{H_ ital "Directional" \( ω \) = ital "OUT" \( ω \) / \[ H_ ital "Channel" \( ω \)  cdot  ital "IN" \( ω \)  \] } {}</m:annotation>
+            </m:semantics>
+          </m:math>
+        </equation>
+      </section>
+    </section>
+  </content>
+</document>

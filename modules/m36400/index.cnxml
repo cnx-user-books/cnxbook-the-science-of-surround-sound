@@ -1,0 +1,159 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+  <title>Surround Sound Simulation</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m36400</md:content-id>
+  <md:title>Surround Sound Simulation</md:title>
+  <md:abstract>Generating the illusion of directional sound using calculated directional transfer functions.</md:abstract>
+  <md:uuid>f6435c67-0089-454b-acf0-babb24dc96d5</md:uuid>
+</metadata>
+
+<content>
+    <section id="id1168784274976">
+      <title>Directional Test Signal Creation</title>
+      <para id="id1168786805346">In order to test the accuracy of our calculated HRTFs, we used 5.1 surround sound test files used to calibrate home theater systems. We first had to downsample these files from their original sampling rate of 48000 Hz to our sampling rate of 41000 Hz. Since the files were all meant to be played at the same time, each file only played sound part of the time. Therefore, we had to cut out the unused parts of each file and create new sound files which included only the testing segment of each directional file. After this process was complete, we were left with five signals, each of which specified which direction the sound was supposed to come from.</para>
+    </section>
+    <section id="id1168787530032">
+      <title>Directional Sound Playback</title>
+      <para id="id1336858">We then simulated these signals coming from particular directions using the equation from the HRTF calculation:</para>
+      <equation id="id5047534">
+        <m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>H</m:mi>
+                      <m:mstyle fontstyle="italic">
+                        <m:mrow>
+                          <m:mtext>Channel</m:mtext>
+                        </m:mrow>
+                      </m:mstyle>
+                    </m:msub>
+                    <m:mo stretchy="false">(</m:mo>
+                    <m:mi>ω</m:mi>
+                    <m:mrow>
+                      <m:mo stretchy="false">)</m:mo>
+                      <m:mo stretchy="false">⋅</m:mo>
+                      <m:mstyle fontstyle="italic">
+                        <m:mrow>
+                          <m:mtext>IN</m:mtext>
+                        </m:mrow>
+                      </m:mstyle>
+                    </m:mrow>
+                    <m:mo stretchy="false">(</m:mo>
+                    <m:mi>ω</m:mi>
+                    <m:mrow>
+                      <m:mo stretchy="false">)</m:mo>
+                      <m:mo stretchy="false">⋅</m:mo>
+                      <m:msub>
+                        <m:mi>H</m:mi>
+                        <m:mstyle fontstyle="italic">
+                          <m:mrow>
+                            <m:mtext>Directional</m:mtext>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:msub>
+                    </m:mrow>
+                    <m:mo stretchy="false">(</m:mo>
+                    <m:mi>ω</m:mi>
+                    <m:mrow>
+                      <m:mo stretchy="false">)</m:mo>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:mstyle fontstyle="italic">
+                        <m:mrow>
+                          <m:mtext>OUT</m:mtext>
+                        </m:mrow>
+                      </m:mstyle>
+                    </m:mrow>
+                    <m:mo stretchy="false">(</m:mo>
+                    <m:mi>ω</m:mi>
+                    <m:mo stretchy="false">)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{H_ ital "Channel" \( ω \)  cdot  ital "IN" \( ω \)  cdot H_ ital "Directional" \( ω \) = ital "OUT" \( ω \) } {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </equation>
+      <para id="id1168780234496">In this case 
+<m:math xmlns:m="http://www.w3.org/1998/Math/MathML"><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:msub><m:mi>H</m:mi><m:mstyle fontstyle="italic"><m:mrow><m:mtext>Channel</m:mtext></m:mrow></m:mstyle></m:msub></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{H_ ital "Channel"} {}</m:annotation></m:semantics></m:math>is the earbud to ear channel transfer function. Unfortunately, we weren’t able to characterize this channel with our available resources, so in this instance we assumed that 
+<m:math xmlns:m="http://www.w3.org/1998/Math/MathML"><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msub><m:mi>H</m:mi><m:mstyle fontstyle="italic"><m:mrow><m:mtext>Channel</m:mtext></m:mrow></m:mstyle></m:msub><m:mo stretchy="false">=</m:mo><m:mn>1</m:mn></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{H_ ital "Channel"=1} {}</m:annotation></m:semantics></m:math>. This left us with the following equation:</para>
+      <equation id="id1168786224788">
+        <m:math xmlns:m="http://www.w3.org/1998/Math/MathML">
+          <m:semantics>
+            <m:mrow>
+              <m:mstyle fontsize="12pt">
+                <m:mrow>
+                  <m:mrow>
+                    <m:mstyle fontstyle="italic">
+                      <m:mrow>
+                        <m:mtext>IN</m:mtext>
+                      </m:mrow>
+                    </m:mstyle>
+                    <m:mo stretchy="false">(</m:mo>
+                    <m:mi>ω</m:mi>
+                    <m:mrow>
+                      <m:mo stretchy="false">)</m:mo>
+                      <m:mo stretchy="false">⋅</m:mo>
+                      <m:msub>
+                        <m:mi>H</m:mi>
+                        <m:mstyle fontstyle="italic">
+                          <m:mrow>
+                            <m:mtext>Directional</m:mtext>
+                          </m:mrow>
+                        </m:mstyle>
+                      </m:msub>
+                    </m:mrow>
+                    <m:mo stretchy="false">(</m:mo>
+                    <m:mi>ω</m:mi>
+                    <m:mrow>
+                      <m:mo stretchy="false">)</m:mo>
+                      <m:mo stretchy="false">=</m:mo>
+                      <m:mstyle fontstyle="italic">
+                        <m:mrow>
+                          <m:mtext>OUT</m:mtext>
+                        </m:mrow>
+                      </m:mstyle>
+                    </m:mrow>
+                    <m:mo stretchy="false">(</m:mo>
+                    <m:mi>ω</m:mi>
+                    <m:mo stretchy="false">)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mstyle>
+              <m:mrow/>
+            </m:mrow>
+            <m:annotation encoding="StarMath 5.0"> size 12{ ital "IN" \( ω \)  cdot H_ ital "Directional" \( ω \) = ital "OUT" \( ω \) } {}</m:annotation>
+          </m:semantics>
+        </m:math>
+      </equation>
+      <para id="id2462040">By applying this equation to each calculated 
+<m:math xmlns:m="http://www.w3.org/1998/Math/MathML"><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msub><m:mi>H</m:mi><m:mstyle fontstyle="italic"><m:mrow><m:mtext>Directional</m:mtext></m:mrow></m:mstyle></m:msub><m:mo stretchy="false">(</m:mo><m:mi>ω</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{H_ ital "Directional" \( ω \) } {}</m:annotation></m:semantics></m:math>for both ears we were able to generate a series of synthesized sound files for each ear which when played in stereo would mimic a cound coming from a particular direction by using the following code:</para>
+      <para id="id5840063">
+        <code display="inline">L_OUT=[SYNTH_FL_L, SYNTH_FC_L, SYNTH_FR_L, SYNTH_RR_L, SYNTH_RL_L];</code>
+      </para>
+      <para id="id7105284">
+        <code display="inline">L_OUT=L_OUT';</code>
+      </para>
+      <para id="id5411120"/>
+      <para id="id1168788077910">
+        <code display="inline">R_OUT=[SYNTH_FL_R, SYNTH_FC_R, SYNTH_FR_R, SYNTH_RR_R, SYNTH_RL_R];</code>
+      </para>
+      <para id="id1168779849936">
+        <code display="inline">R_OUT=R_OUT';</code>
+      </para>
+      <para id="id1168782110964"/>
+      <para id="id1168792294413">
+        <code display="inline">FINAL_OUT=[L_OUT, R_OUT];</code>
+      </para>
+      <para id="id5027607"/>
+      <para id="id1168779868227">
+        <code display="inline">sound(FINAL_OUT, Fs);</code>
+      </para>
+      <para id="id5845437">In this code, the SYNTH terms are the vectors corresponding to the filtered test signals for front-left, front-center, front-right, rear-right, and rear-left directions. With the left and right ear outputs arranged as shown in FINAL_OUT, the sound command plays the first set of terms to the left speaker/headphone and the second set of terms to the right speaker/headphone as we desired. </para>
+    </section>
+  </content>
+</document>
