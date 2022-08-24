@@ -1,3 +1,19 @@
-<col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="en">  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">  <md:content-id>col11254</md:content-id>  <md:title>The Science of Surround Sound</md:title>      <md:license url="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License 3.0</md:license>  <md:language>en</md:language>              <md:uuid>5af19eb3-c2bd-49d6-8a00-417380f785fb</md:uuid>
-<md:slug>the-science-of-surround-sound</md:slug>
-</metadata>  <col:content>          <col:module document="m36395"/>                            <col:module document="m36396"/>                            <col:module document="m36397"/>                            <col:module document="m36400"/>                            <col:module document="m36401"/>                            <col:module document="m36403"/>                    </col:content></col:collection>
+<?xml version="1.0"?>
+<col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="en" authors="Chris Stevenson ,Adam Samaniego ,Erin Lytle ,Nnena Okeke">
+  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+    <md:content-id>col11254</md:content-id>
+    <md:title>The Science of Surround Sound</md:title>
+    <md:license url="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License 3.0</md:license>
+    <md:language>en</md:language>
+    <md:uuid>5af19eb3-c2bd-49d6-8a00-417380f785fb</md:uuid>
+    <md:slug>the-science-of-surround-sound</md:slug>
+  </metadata>
+  <col:content>
+    <col:module document="m36395"/>
+    <col:module document="m36396"/>
+    <col:module document="m36397"/>
+    <col:module document="m36400"/>
+    <col:module document="m36401"/>
+    <col:module document="m36403"/>
+  </col:content>
+</col:collection>
